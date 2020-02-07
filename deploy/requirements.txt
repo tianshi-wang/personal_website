@@ -1,0 +1,8 @@
+sqlalchemy
+pandas
+pymongo
+psycopg2
+flask_cors
+dash
+dash_table_experiments
+dash-daq

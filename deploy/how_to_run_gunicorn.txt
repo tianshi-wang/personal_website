@@ -1,0 +1,15 @@
+run the server
+gunicorn webApp.app:server
+server is a module in webApp/app.py
+
+File structure
+Cannot run it inside webApp since python cannot find the webApp directory.
+
+run in background
+gunicorn   webApp.app:server -D
+
+kill gunicorn
+pkill gunicorn
+
+How to config nginx
+https://chrisdtran.com/2017/deploy-flask-on-ec2/
