@@ -1,4 +1,21 @@
-run the server
+Before setting up Nginx+Gunicorn, check whether flask works: python3 run.py. 
+Then go to the address http://ip_address:5000 to see if the website is working.
+
+Set up Nginx
+1. Install nginx; on Ubuntu use apt install nginx
+2. In /etc/nginx/sites-enabled, create "application" where the static location is not necessary.
+   server {
+        location / {
+                proxy_pass http://localhost:8000;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+   }
+3. Check /etc/nginx/nginx.conf  
+4. Restart Nginx server. sudo /etc/init.d/nginx restart
+
+
+Start gunicorn
 gunicorn webApp.app:server
 server is a module in webApp/app.py
 
